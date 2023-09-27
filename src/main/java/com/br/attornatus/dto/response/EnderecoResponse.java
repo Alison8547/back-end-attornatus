@@ -16,5 +16,5 @@ public class EnderecoResponse {
     private String cep;
     private String numero;
     private String cidade;
-    private String principal;
+    private Boolean principal;
 }

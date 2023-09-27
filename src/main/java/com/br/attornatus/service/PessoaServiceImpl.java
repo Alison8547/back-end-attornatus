@@ -11,7 +11,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 
 
@@ -58,10 +57,9 @@ public class PessoaServiceImpl implements PessoaService {
     }
 
     @Override
-    public List<PessoaEnderecoListResponse> pessoaEnderecoList(Integer idPessoa) {
-        return pessoaRepository.findAllById(Collections.singleton(findPessoa(idPessoa).getId())).stream()
-                .map(mapper::toResponsePessoaEndereco)
-                .toList();
+    public PessoaEnderecoListResponse pessoaEnderecoList(Integer idPessoa) {
+        return mapper.toResponsePessoaEndereco(findPessoa(idPessoa));
+
     }
 
 

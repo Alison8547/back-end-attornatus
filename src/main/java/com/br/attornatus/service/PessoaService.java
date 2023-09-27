@@ -19,5 +19,5 @@ public interface PessoaService {
 
     List<PessoaResponse> listPessoas();
 
-    List<PessoaEnderecoListResponse> pessoaEnderecoList(Integer idPessoa);
+    PessoaEnderecoListResponse pessoaEnderecoList(Integer idPessoa);
 }

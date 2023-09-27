@@ -74,6 +74,6 @@ public interface PessoaController {
             }
     )
     @GetMapping("/list-pessoa-enderecos/{idPessoa}")
-    ResponseEntity<List<PessoaEnderecoListResponse>> listPessoaEnderecos(@PathVariable(name = "idPessoa") Integer idPessoa);
+    ResponseEntity<PessoaEnderecoListResponse> listPessoaEnderecos(@PathVariable(name = "idPessoa") Integer idPessoa);
 
 }

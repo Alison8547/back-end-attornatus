@@ -38,7 +38,7 @@ public class PessoaControllerImpl implements PessoaController {
     }
 
     @Override
-    public ResponseEntity<List<PessoaEnderecoListResponse>> listPessoaEnderecos(Integer idPessoa) {
+    public ResponseEntity<PessoaEnderecoListResponse> listPessoaEnderecos(Integer idPessoa) {
         return new ResponseEntity<>(pessoaService.pessoaEnderecoList(idPessoa), HttpStatus.OK);
     }
 }
