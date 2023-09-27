@@ -25,10 +25,12 @@ public class PessoaServiceImpl implements PessoaService {
 
     @Override
     public PessoaResponse createPessoa(PessoaRequest pessoaRequest) {
-        Pessoa pessoaCreate = pessoaRepository.save(mapper.toEntityPessoa(pessoaRequest));
+        Pessoa entityPessoa = mapper.toEntityPessoa(pessoaRequest);
+
+        pessoaRepository.save(entityPessoa);
         log.info("Pessoa criada com sucesso!");
 
-        return mapper.toResponsePessoa(pessoaCreate);
+        return mapper.toResponsePessoa(entityPessoa);
     }
 
     @Override

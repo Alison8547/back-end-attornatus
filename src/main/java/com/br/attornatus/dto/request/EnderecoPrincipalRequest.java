@@ -1,5 +1,6 @@
 package com.br.attornatus.dto.request;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,5 +15,6 @@ import javax.validation.constraints.NotBlank;
 public class EnderecoPrincipalRequest {
 
     @NotBlank(message = "Não pode ser null ou vazio!")
+    @Schema(description = "Registrar seu principal endereço", example = "Sim")
     private String principal;
 }
