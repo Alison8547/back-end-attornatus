@@ -13,6 +13,6 @@ import javax.validation.constraints.NotBlank;
 @AllArgsConstructor
 public class EnderecoPrincipalRequest {
 
-    @NotBlank
+    @NotBlank(message = "Não pode ser null ou vazio!")
     private String principal;
 }

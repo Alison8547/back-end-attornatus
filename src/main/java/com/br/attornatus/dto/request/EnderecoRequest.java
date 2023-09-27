@@ -13,16 +13,16 @@ import javax.validation.constraints.NotBlank;
 @AllArgsConstructor
 public class EnderecoRequest {
 
-    @NotBlank
+    @NotBlank(message = "Não pode ser null ou vazio!")
     private String logradouro;
 
-    @NotBlank
+    @NotBlank(message = "Não pode ser null ou vazio!")
     private String cep;
 
-    @NotBlank
+    @NotBlank(message = "Não pode ser null ou vazio!")
     private String numero;
 
-    @NotBlank
+    @NotBlank(message = "Não pode ser null ou vazio!")
     private String cidade;
 
 }
