@@ -1,6 +1,7 @@
 package com.br.attornatus.controller;
 
 import com.br.attornatus.dto.request.PessoaRequest;
+import com.br.attornatus.dto.response.PessoaEnderecoListResponse;
 import com.br.attornatus.dto.response.PessoaResponse;
 import com.br.attornatus.service.PessoaService;
 import lombok.RequiredArgsConstructor;
@@ -34,5 +35,10 @@ public class PessoaControllerImpl implements PessoaController {
     @Override
     public ResponseEntity<List<PessoaResponse>> listPessoas() {
         return new ResponseEntity<>(pessoaService.listPessoas(), HttpStatus.OK);
+    }
+
+    @Override
+    public ResponseEntity<List<PessoaEnderecoListResponse>> listPessoaEnderecos(Integer idPessoa) {
+        return new ResponseEntity<>(pessoaService.pessoaEnderecoList(idPessoa), HttpStatus.OK);
     }
 }

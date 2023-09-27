@@ -1,6 +1,7 @@
 package com.br.attornatus.controller;
 
 import com.br.attornatus.dto.request.PessoaRequest;
+import com.br.attornatus.dto.response.PessoaEnderecoListResponse;
 import com.br.attornatus.dto.response.PessoaResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -25,5 +26,7 @@ public interface PessoaController {
     @GetMapping("/list-pessoas")
     ResponseEntity<List<PessoaResponse>> listPessoas();
 
+    @GetMapping("/list-pessoa-enderecos/{idPessoa}")
+    ResponseEntity<List<PessoaEnderecoListResponse>> listPessoaEnderecos(@PathVariable(name = "idPessoa") Integer idPessoa);
 
 }

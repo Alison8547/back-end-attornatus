@@ -1,6 +1,7 @@
 package com.br.attornatus.service;
 
 import com.br.attornatus.dto.request.PessoaRequest;
+import com.br.attornatus.dto.response.PessoaEnderecoListResponse;
 import com.br.attornatus.dto.response.PessoaResponse;
 import com.br.attornatus.entity.Pessoa;
 import com.br.attornatus.exception.BusinessException;
@@ -10,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 
@@ -50,6 +52,13 @@ public class PessoaServiceImpl implements PessoaService {
     public List<PessoaResponse> listPessoas() {
         return pessoaRepository.findAll().stream()
                 .map(mapper::toResponsePessoa)
+                .toList();
+    }
+
+    @Override
+    public List<PessoaEnderecoListResponse> pessoaEnderecoList(Integer idPessoa) {
+        return pessoaRepository.findAllById(Collections.singleton(findPessoa(idPessoa).getId())).stream()
+                .map(mapper::toResponsePessoaEndereco)
                 .toList();
     }
 

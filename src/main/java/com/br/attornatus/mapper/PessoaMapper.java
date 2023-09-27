@@ -1,6 +1,7 @@
 package com.br.attornatus.mapper;
 
 import com.br.attornatus.dto.request.PessoaRequest;
+import com.br.attornatus.dto.response.PessoaEnderecoListResponse;
 import com.br.attornatus.dto.response.PessoaResponse;
 import com.br.attornatus.entity.Pessoa;
 import lombok.RequiredArgsConstructor;
@@ -20,5 +21,9 @@ public class PessoaMapper {
 
     public PessoaResponse toResponsePessoa(Pessoa pessoa) {
         return mapper.map(pessoa, PessoaResponse.class);
+    }
+
+    public PessoaEnderecoListResponse toResponsePessoaEndereco(Pessoa pessoa) {
+        return mapper.map(pessoa, PessoaEnderecoListResponse.class);
     }
 }

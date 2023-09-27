@@ -1,6 +1,7 @@
 package com.br.attornatus.service;
 
 import com.br.attornatus.dto.request.PessoaRequest;
+import com.br.attornatus.dto.response.PessoaEnderecoListResponse;
 import com.br.attornatus.dto.response.PessoaResponse;
 
 import javax.transaction.Transactional;
@@ -17,4 +18,6 @@ public interface PessoaService {
     PessoaResponse consultPessoa(Integer idPessoa);
 
     List<PessoaResponse> listPessoas();
+
+    List<PessoaEnderecoListResponse> pessoaEnderecoList(Integer idPessoa);
 }
