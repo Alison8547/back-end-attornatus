@@ -36,7 +36,10 @@ public class Endereco implements Serializable {
     @Column(name = "cidade", nullable = false)
     private String cidade;
 
-    @Column(name = "id_pessoa", insertable = false, updatable = false)
+    @Column(name = "principal", columnDefinition = "varchar(255) default 'indefinido'")
+    private String principal;
+
+    @Column(name = "id_pessoa", insertable = false, updatable = false, nullable = false)
     private Integer idPessoa;
 
     @ManyToOne
